@@ -1,13 +1,29 @@
-const mysql = require('mysql2');
+const sql = require('mssql');
 
-const pool = mysql.createPool({
-    host: 'localhost',
+const config = {
     user: 'sa',
     password: 'dockerStrongPwd123',
+    server: 'localhost',
+    port: 1433,
     database: 'StreamingDatabase',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-});
+    options: {
+        encrypt: true,
+        trustServerCertificate: true
+    }
+};
 
-module.exports = pool.promise();
+const poolPromise = new sql.ConnectionPool(config)
+    .connect()
+    .then(pool => {
+        console.log('Connected to MSSQL successfully!');
+        return pool;
+    })
+    .catch(err => {
+        console.error('Database connection failed:', err);
+        process.exit(1);
+    });
+
+module.exports = {
+    sql,
+    poolPromise
+};
