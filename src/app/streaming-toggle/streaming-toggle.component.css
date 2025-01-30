@@ -1,0 +1,21 @@
+.streaming-toggle-container {
+  padding: 20px;
+}
+
+.toggle-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 5px;
+}
+
+button.active {
+  background-color: #4caf50;
+  color: white;
+}

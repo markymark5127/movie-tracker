@@ -1,0 +1,22 @@
+.movie-list-container {
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+li.selected {
+  background-color: #f0f0f0;
+}
+
+h3 {
+  margin: 0;
+}

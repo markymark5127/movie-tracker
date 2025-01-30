@@ -1,0 +1,17 @@
+<div class="movie-details-container">
+  <h2>{{ movie?.title }}</h2>
+  <p>{{ movie?.description }}</p>
+  <p>Released: {{ movie?.releaseYear }}</p>
+  <p>Rating: {{ movie?.rating }}</p>
+
+  <h3>Comments</h3>
+  <ul>
+    <li *ngFor="let comment of comments">
+      <p>{{ comment.text }}</p>
+      <div class="comment-actions">
+        <button (click)="likeComment(comment)">👍 {{ comment.likes }}</button>
+        <button (click)="dislikeComment(comment)">👎 {{ comment.dislikes }}</button>
+      </div>
+    </li>
+  </ul>
+</div>

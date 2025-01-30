@@ -1,0 +1,23 @@
+.movie-details-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #ddd;
+}

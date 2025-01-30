@@ -1,0 +1,10 @@
+<div class="streaming-toggle-container">
+  <h2>Select Streaming Services</h2>
+  <div class="toggle-buttons">
+    <button *ngFor="let service of availableServices"
+            (click)="toggleService(service)"
+            [class.active]="selectedServices.includes(service)">
+      {{ service }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="movie-list-container">
+  <h2>Movie List</h2>
+  <ul>
+    <li *ngFor="let movie of movies" (click)="selectMovie(movie)" [class.selected]="movie === selectedMovie">
+      <h3>{{ movie.title }}</h3>
+      <p>Rating: {{ movie.rating }}</p>
+      <p>Streaming on: {{ movie.streamingService }}</p>
+    </li>
+  </ul>
+
+  <!--<app-movie-details *ngIf="selectedMovie" [movie]="selectedMovie"></app-movie-details>-->
+</div>
